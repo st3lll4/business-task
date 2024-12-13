@@ -3,6 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+if (!Directory.Exists(FileHelper.BasePath))
+{
+    Directory.CreateDirectory(FileHelper.BasePath);
+}
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
                        throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -22,15 +26,16 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
-} else {
+}
+else
+{
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
-app.MapStaticAssets(); 
-app.UseStaticFiles(); 
+app.MapStaticAssets();
+app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 app.MapRazorPages().WithStaticAssets();

@@ -3107,7 +3107,6 @@
       "packagesPath": "/Users/stella.t/.nuget/packages/",
       "outputPath": "/Users/stella.t/RiderProjects/business-task/DAL/obj/",
       "projectStyle": "PackageReference",
-      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
         "/Users/stella.t/.nuget/NuGet/NuGet.Config"
       ],
@@ -3136,7 +3135,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "all"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {

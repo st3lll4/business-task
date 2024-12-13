@@ -1,7 +1,8 @@
 namespace Domain;
 
-public class ShareholderInBusiness
+public class ShareholderInBusiness : BaseEntity
 {
+    public bool IsFounder { get; set; }
     public int ShareCapital { get; set; }
     
     public int BusinessId { get; set; }
