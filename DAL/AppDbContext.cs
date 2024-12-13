@@ -1,12 +1,17 @@
 using Microsoft.EntityFrameworkCore;
+using Domain;
 
 namespace DAL;
 
 public class AppDbContext : DbContext
 {
-    public DbSet<Game> Games { get; set; }
-    public DbSet<User> Users { get; set; }
-    public DbSet<Configuration> Configurations { get; set; }
+    public DbSet<Shareholder> Shareholders { get; set; }
+    public DbSet<Business> Businesses { get; set; }
+    public DbSet<Person> Persons { get; set; }
+    public DbSet<ShareholderInBusiness> ShareholdersInBusinesses { get; set; }
+    public DbSet<ShareholderType> ShareholdersTypes { get; set; }
+    
+    
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }

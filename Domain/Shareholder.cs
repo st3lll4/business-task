@@ -14,4 +14,6 @@ public class Shareholder : BaseEntity
     
     public int ShareholderTypeId { get; set; }
     public ShareholderType? ShareholderType { get; set; }
+    
+    public ICollection<ShareholderInBusiness>? ShareholdersInBusiness { get; set; }
 }
