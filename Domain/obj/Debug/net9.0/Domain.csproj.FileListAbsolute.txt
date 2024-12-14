@@ -1,0 +1,12 @@
+/Users/stella.t/RiderProjects/business-task/Domain/bin/Debug/net9.0/Domain.deps.json
+/Users/stella.t/RiderProjects/business-task/Domain/bin/Debug/net9.0/Domain.dll
+/Users/stella.t/RiderProjects/business-task/Domain/bin/Debug/net9.0/Domain.pdb
+/Users/stella.t/RiderProjects/business-task/Domain/obj/Debug/net9.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/stella.t/RiderProjects/business-task/Domain/obj/Debug/net9.0/Domain.AssemblyInfoInputs.cache
+/Users/stella.t/RiderProjects/business-task/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs
+/Users/stella.t/RiderProjects/business-task/Domain/obj/Debug/net9.0/Domain.csproj.CoreCompileInputs.cache
+/Users/stella.t/RiderProjects/business-task/Domain/obj/Debug/net9.0/Domain.dll
+/Users/stella.t/RiderProjects/business-task/Domain/obj/Debug/net9.0/refint/Domain.dll
+/Users/stella.t/RiderProjects/business-task/Domain/obj/Debug/net9.0/Domain.pdb
+/Users/stella.t/RiderProjects/business-task/Domain/obj/Debug/net9.0/ref/Domain.dll
+/Users/stella.t/RiderProjects/business-task/Domain/obj/Debug/net9.0/Domain.sourcelink.json
