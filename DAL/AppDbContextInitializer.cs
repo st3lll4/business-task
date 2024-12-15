@@ -7,17 +7,7 @@ public static class AppDbContextInitializer
     public static void InitializeDb(AppDbContext context)
     {
         if (context.Persons.Any() || context.Businesses.Any()) return;
-
-        var shareholderTypes = new[]
-        {
-            new ShareholderType { Title = "Person" },
-            new ShareholderType { Title = "Business" }
-        };
-        context.ShareholdersTypes.AddRange(shareholderTypes);
-        context.SaveChanges();
         
-        var personType = context.ShareholdersTypes.First(st => st.Title == "Person");
-        var businessType = context.ShareholdersTypes.First(st => st.Title == "Business");
 
         var persons = new[]
         {
@@ -51,7 +41,6 @@ public static class AppDbContextInitializer
         var personShareholders = persons.Select(p => new Shareholder
         {
             Person = p,
-            ShareholderType = personType
         }).ToList();
         context.Shareholders.AddRange(personShareholders);
         context.SaveChanges();
@@ -59,7 +48,6 @@ public static class AppDbContextInitializer
         var businessShareholders = businesses.Select(b => new Shareholder
         {
             ShareholderBusiness = b,
-            ShareholderType = businessType
         }).ToList();
         context.Shareholders.AddRange(businessShareholders);
         context.SaveChanges();

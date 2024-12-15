@@ -88,26 +88,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/stella.t/RiderProjects/business-task/WebApp/Pages/Shareholders/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVob2xkZXJzL0NyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/stella.t/RiderProjects/business-task/WebApp/Pages/Shareholders/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVob2xkZXJzL0RlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/stella.t/RiderProjects/business-task/WebApp/Pages/Shareholders/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVob2xkZXJzL0RldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/stella.t/RiderProjects/business-task/WebApp/Pages/Shareholders/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVob2xkZXJzL0VkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/stella.t/RiderProjects/business-task/WebApp/Pages/Shareholders/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVob2xkZXJzL0luZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/stella.t/RiderProjects/business-task/WebApp/Pages/ShareholdersInBusiness/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVob2xkZXJzSW5CdXNpbmVzcy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -126,26 +106,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/stella.t/RiderProjects/business-task/WebApp/Pages/ShareholdersInBusiness/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVob2xkZXJzSW5CdXNpbmVzcy9JbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/stella.t/RiderProjects/business-task/WebApp/Pages/ShareholderTypes/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVob2xkZXJUeXBlcy9DcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/stella.t/RiderProjects/business-task/WebApp/Pages/ShareholderTypes/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVob2xkZXJUeXBlcy9EZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/stella.t/RiderProjects/business-task/WebApp/Pages/ShareholderTypes/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVob2xkZXJUeXBlcy9EZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/stella.t/RiderProjects/business-task/WebApp/Pages/ShareholderTypes/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVob2xkZXJUeXBlcy9FZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/stella.t/RiderProjects/business-task/WebApp/Pages/ShareholderTypes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVob2xkZXJUeXBlcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/stella.t/RiderProjects/business-task/WebApp/Pages/_ViewImports.cshtml]

@@ -80,16 +80,11 @@ namespace DAL.Migrations
                     b.Property<int?>("ShareholderBusinessId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ShareholderTypeId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
 
                     b.HasIndex("PersonId");
 
                     b.HasIndex("ShareholderBusinessId");
-
-                    b.HasIndex("ShareholderTypeId");
 
                     b.ToTable("Shareholders");
                 });
@@ -121,21 +116,6 @@ namespace DAL.Migrations
                     b.ToTable("ShareholdersInBusinesses");
                 });
 
-            modelBuilder.Entity("Domain.ShareholderType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ShareholdersTypes");
-                });
-
             modelBuilder.Entity("Domain.Shareholder", b =>
                 {
                     b.HasOne("Domain.Person", "Person")
@@ -146,17 +126,9 @@ namespace DAL.Migrations
                         .WithMany("ShareholderPlaceInBusiness")
                         .HasForeignKey("ShareholderBusinessId");
 
-                    b.HasOne("Domain.ShareholderType", "ShareholderType")
-                        .WithMany("Shareholders")
-                        .HasForeignKey("ShareholderTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Person");
 
                     b.Navigation("ShareholderBusiness");
-
-                    b.Navigation("ShareholderType");
                 });
 
             modelBuilder.Entity("Domain.ShareholderInBusiness", b =>
@@ -193,11 +165,6 @@ namespace DAL.Migrations
             modelBuilder.Entity("Domain.Shareholder", b =>
                 {
                     b.Navigation("ShareholdersInBusiness");
-                });
-
-            modelBuilder.Entity("Domain.ShareholderType", b =>
-                {
-                    b.Navigation("Shareholders");
                 });
 #pragma warning restore 612, 618
         }

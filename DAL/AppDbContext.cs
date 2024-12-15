@@ -10,8 +10,6 @@ public class AppDbContext : DbContext
     public DbSet<Business> Businesses { get; set; }
     public DbSet<Person> Persons { get; set; }
     public DbSet<ShareholderInBusiness> ShareholdersInBusinesses { get; set; }
-    public DbSet<ShareholderType> ShareholdersTypes { get; set; }
-
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     { 

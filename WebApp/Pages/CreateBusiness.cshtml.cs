@@ -173,6 +173,19 @@ public class CreateBusiness : PageModel
                         .SingleOrDefaultAsync(),
                     ShareCapital = shareholder.Share!.Value
                 });
+
+                
+                await _context.Shareholders.AddAsync(new Shareholder
+                {
+                    PersonId = await _context.Persons
+                        .Where(p => p.FirstName + " " + p.LastName == shareholder.Name)
+                        .Select(p => p.Id)
+                        .SingleOrDefaultAsync(),
+                    ShareholderBusinessId = await _context.Businesses
+                        .Where(b => b.BusinessName == shareholder.Name)
+                        .Select(b => b.Id)
+                        .SingleOrDefaultAsync()
+                });
             }
 
             await _context.SaveChangesAsync();
