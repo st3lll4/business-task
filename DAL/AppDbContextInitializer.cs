@@ -6,7 +6,7 @@ public static class AppDbContextInitializer
 {
     public static void InitializeDb(AppDbContext context)
     {
-        //if (context.Persons.Any() || context.Businesses.Any()) return;
+        if (context.Persons.Any() || context.Businesses.Any()) return;
 
         var shareholderTypes = new[]
         {
@@ -21,9 +21,9 @@ public static class AppDbContextInitializer
 
         var persons = new[]
         {
-            new Person { FirstName = "Tiina", LastName = "Miina", IdCode = "48501014321" },
-            new Person { FirstName = "Jaana", LastName = "Lind", IdCode = "49501014321" },
-            new Person { FirstName = "Leiutajateküla", LastName = "Lotte", IdCode = "47501014321" }
+            new Person { FirstName = "Tiina", LastName = "Miina", IdCode = "48507083221" },
+            new Person { FirstName = "Jaana", LastName = "Lind", IdCode = "49001018742" },
+            new Person { FirstName = "Leiutajateküla", LastName = "Lotte", IdCode = "60103310291" }
         };
         context.Persons.AddRange(persons);
         context.SaveChanges();
@@ -70,7 +70,8 @@ public static class AppDbContextInitializer
             {
                 Business = businesses[0],
                 Shareholder = personShareholders[0],
-                ShareCapital = 1500
+                ShareCapital = 1500,
+                IsFounder = true
             },
             new ShareholderInBusiness
             {
@@ -82,7 +83,8 @@ public static class AppDbContextInitializer
             {
                 Business = businesses[1],
                 Shareholder = businessShareholders[0],
-                ShareCapital = 5000
+                ShareCapital = 5000,
+                IsFounder = true
             }
         };
         context.ShareholdersInBusinesses.AddRange(shareholderInBusiness);

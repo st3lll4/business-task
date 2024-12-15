@@ -16,29 +16,33 @@
 </div>
 
 <div class="container">
-    <form>
+    <form method="post">
         <div class="row mb-3 justify-content-center">
             <label for="businessName" class="col-sm-2 col-form-label text-end">Name</label>
             <div class="col-sm-3">
                 <input type="text" class="form-control" id="businessName" asp-for="BusinessName"/>
+                <span asp-validation-for="BusinessName" class="text-danger"></span>
             </div>
         </div>
         <div class="row mb-3 justify-content-center">
             <label for="registryCode" class="col-sm-2 col-form-label text-end">Registry code</label>
             <div class="col-sm-3">
                 <input type="text" class="form-control" id="registryCode" asp-for="RegistryCode"/>
+                <span asp-validation-for="RegistryCode" class="text-danger"></span>
             </div>
         </div>
         <div class="row mb-3 justify-content-center">
             <label for="foundingDate" class="col-sm-2 col-form-label text-end">Founding date</label>
             <div class="col-sm-3">
                 <input type="date" class="form-control" id="foundingDate" asp-for="FoundingDate"/>
+                <span asp-validation-for="FoundingDate" class="text-danger"></span>
             </div>
         </div>
         <div class="row mb-3 justify-content-center">
             <label for="totalCapital" class="col-sm-2 col-form-label text-end">Total capital</label>
             <div class="col-sm-3">
                 <input type="number" class="form-control" id="totalCapital" asp-for="TotalCapital"/>
+                <span asp-validation-for="TotalCapital" class="text-danger"></span>
             </div>
         </div>
         <div class="row mb-3 justify-content-center">
@@ -46,13 +50,17 @@
             <div class="col-sm-3 m-2">
                 <select asp-for="Shareholder1" id="shareholder1" class="form-select mb-2"
                         asp-items="Model.ShareholderSelectList"></select>
+                <span asp-validation-for="Shareholder1" class="text-danger"></span>
                 <p>Add more shareholders if needed:</p>
                 <select asp-for="Shareholder2" id="shareholder2" class="form-select mb-2"
                         asp-items="Model.ShareholderSelectList"></select>
+                <span asp-validation-for="Shareholder2" class="text-danger"></span>
                 <select asp-for="Shareholder3" id="shareholder3" class="form-select mb-2"
                         asp-items="Model.ShareholderSelectList"></select>
+                <span asp-validation-for="Shareholder3" class="text-danger"></span>
                 <select asp-for="Shareholder4" id="shareholder4" class="form-select mb-2"
                         asp-items="Model.ShareholderSelectList"></select>
+                <span asp-validation-for="Shareholder4" class="text-danger"></span>
             </div>
         </div>
         <div class="row mb-3 justify-content-center">
@@ -61,13 +69,17 @@
             <div class="col-sm-3 m-2">
                 <input type="number" class="form-control mb-2" id="shareholder1Share" placeholder="Shareholder 1 share"
                        asp-for="Shareholder1Share"/>
+                <span asp-validation-for="Shareholder1Share" class="text-bg-danger"></span>
                 <p>If applicable:</p>
                 <input type="number" class="form-control mb-2" placeholder="Shareholder 2 share"
                        asp-for="Shareholder2Share"/>
+                <span asp-validation-for="Shareholder2Share" class="text-bg-danger"></span>
                 <input type="number" class="form-control mb-2" placeholder="Shareholder 3 share"
                        asp-for="Shareholder3Share"/>
+                <span asp-validation-for="Shareholder3Share" class="text-bg-danger"></span>
                 <input type="number" class="form-control mb-2" placeholder="Shareholder 4 share"
                        asp-for="Shareholder4Share"/>
+                <span asp-validation-for="Shareholder4Share" class="text-bg-danger"></span>
             </div>
         </div>
         <div class="row">
