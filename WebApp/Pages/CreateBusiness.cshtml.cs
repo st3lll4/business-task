@@ -161,30 +161,41 @@ public class CreateBusiness : PageModel
 
             foreach (var shareholder in shareholders)
             {
+                var excistingShareholder = await _context.Shareholders
+                    .FirstOrDefaultAsync(s =>
+                        (s.Person != null && s.Person.FirstName + " " + s.Person.LastName == shareholder.Name) ||
+                        (s.ShareholderBusiness != null && s.ShareholderBusiness.BusinessName == shareholder.Name));
+
+                if (excistingShareholder == null)
+                {
+                    var newShareholder = new Shareholder();
+                    
+                    var person = await _context.Persons
+                        .FirstOrDefaultAsync(p => p.FirstName + " " + p.LastName == shareholder.Name);
+                    
+                    if (person != null)
+                    {
+                        newShareholder.PersonId = person.Id;
+                    }
+                    else
+                    {
+                        var business = await _context.Businesses
+                            .FirstOrDefaultAsync(b => b.BusinessName == shareholder.Name);
+                        newShareholder.ShareholderBusinessId = business!.Id;
+                    }
+
+                    await _context.Shareholders.AddAsync(newShareholder);
+                    await _context.SaveChangesAsync();
+                    
+                    excistingShareholder = newShareholder;
+                }
+
                 await _context.ShareholdersInBusinesses.AddAsync(new ShareholderInBusiness
                 {
                     IsFounder = true,
                     BusinessId = newBusiness.Id,
-                    ShareholderId = await _context.Shareholders
-                        .Where(s =>
-                            (s.Person != null && s.Person.FirstName + " " + s.Person.LastName == shareholder.Name) ||
-                            (s.ShareholderBusiness != null && s.ShareholderBusiness.BusinessName == shareholder.Name))
-                        .Select(s => s.Id)
-                        .SingleOrDefaultAsync(),
+                    ShareholderId = excistingShareholder.Id,
                     ShareCapital = shareholder.Share!.Value
-                });
-
-                
-                await _context.Shareholders.AddAsync(new Shareholder
-                {
-                    PersonId = await _context.Persons
-                        .Where(p => p.FirstName + " " + p.LastName == shareholder.Name)
-                        .Select(p => p.Id)
-                        .SingleOrDefaultAsync(),
-                    ShareholderBusinessId = await _context.Businesses
-                        .Where(b => b.BusinessName == shareholder.Name)
-                        .Select(b => b.Id)
-                        .SingleOrDefaultAsync()
                 });
             }
 
@@ -194,7 +205,7 @@ public class CreateBusiness : PageModel
             {
                 showSweetAlert = ShowSweetAlert,
                 businessId = newBusiness.Id
-            } );
+            });
         }
 
         await GetShareholders();
