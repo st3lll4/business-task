@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using DAL;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
@@ -53,6 +54,10 @@ public class CreateBusiness : PageModel
     [BindProperty] public int? Shareholder3Share { get; set; }
 
     [BindProperty] public int? Shareholder4Share { get; set; }
+    
+    [BindProperty(SupportsGet = true)] public bool ShowSweetAlert { get; set; }
+    
+    [BindProperty(SupportsGet = true)] public int? BusinessId { get; set; }
 
 
     public CreateBusiness(AppDbContext context)
@@ -96,35 +101,36 @@ public class CreateBusiness : PageModel
                 "Founding date has to be today or earlier.");
         }
 
-        if (TotalCapital < 2500)
+        if (TotalCapital is 0 or < 2500)
         {
             ModelState.AddModelError("TotalCapital",
                 "Capital has to be at least 2500 euros.");
         }
 
-        if (Shareholder1Share < 1)
+        if (Shareholder1Share is null or < 1)
         {
             ModelState.AddModelError("Shareholder1Share",
                 "Shareholder has to have at 1 euro in shares.");
         }
 
-        if (!string.IsNullOrWhiteSpace(Shareholder2) && Shareholder2Share < 1)
+        if (!string.IsNullOrWhiteSpace(Shareholder2) && Shareholder2Share is null or < 1)
         {
             ModelState.AddModelError("Shareholder2Share",
                 "Shareholder has to have at 1 euro in shares.");
         }
 
-        if (!string.IsNullOrWhiteSpace(Shareholder3) && Shareholder3Share < 1)
+        if (!string.IsNullOrWhiteSpace(Shareholder3) && Shareholder3Share is null or < 1)
         {
             ModelState.AddModelError("Shareholder3Share",
                 "Shareholder has to have at 1 euro in shares.");
         }
 
-        if (!string.IsNullOrWhiteSpace(Shareholder4) && Shareholder4Share < 1)
+        if (!string.IsNullOrWhiteSpace(Shareholder4) && Shareholder4Share is null or < 1)
         {
             ModelState.AddModelError("Shareholder4Share",
                 "Shareholder has to have at 1 euro in shares.");
         }
+        
 
         if (Shareholder1Share + Shareholder2Share + Shareholder3Share + Shareholder4Share < TotalCapital)
         {
@@ -164,22 +170,25 @@ public class CreateBusiness : PageModel
                             (s.Person != null && s.Person.FirstName + " " + s.Person.LastName == shareholder.Name) ||
                             (s.ShareholderBusiness != null && s.ShareholderBusiness.BusinessName == shareholder.Name))
                         .Select(s => s.Id)
-                        .FirstAsync(),
+                        .SingleOrDefaultAsync(),
                     ShareCapital = shareholder.Share!.Value
                 });
             }
 
             await _context.SaveChangesAsync();
-
-            Message = "Business created successfully!";
-            return RedirectToPage("/CreateBusiness", new { message = Message });
+            ShowSweetAlert = true;
+            return RedirectToPage("/CreateBusiness", new
+            {
+                showSweetAlert = ShowSweetAlert,
+                businessId = newBusiness.Id
+            } );
         }
 
         await GetShareholders();
         Message = "Something went wrong";
         return Page();
     }
-
+    
     private async Task GetShareholders()
     {
         var persons = await _context.Persons

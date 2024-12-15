@@ -16,7 +16,7 @@
 </div>
 
 <div class="container">
-    <form method="post">
+    <form method="post" id="createBusinessForm">
         <div class="row mb-3 justify-content-center">
             <label for="businessName" class="col-sm-2 col-form-label text-end">Name</label>
             <div class="col-sm-3">
@@ -69,17 +69,17 @@
             <div class="col-sm-3 m-2">
                 <input type="number" class="form-control mb-2" id="shareholder1Share" placeholder="Shareholder 1 share"
                        asp-for="Shareholder1Share"/>
-                <span asp-validation-for="Shareholder1Share" class="text-bg-danger"></span>
+                <span asp-validation-for="Shareholder1Share" class="text-danger"></span>
                 <p>If applicable:</p>
                 <input type="number" class="form-control mb-2" placeholder="Shareholder 2 share"
                        asp-for="Shareholder2Share"/>
-                <span asp-validation-for="Shareholder2Share" class="text-bg-danger"></span>
+                <span asp-validation-for="Shareholder2Share" class="text-danger"></span>
                 <input type="number" class="form-control mb-2" placeholder="Shareholder 3 share"
                        asp-for="Shareholder3Share"/>
-                <span asp-validation-for="Shareholder3Share" class="text-bg-danger"></span>
+                <span asp-validation-for="Shareholder3Share" class="text-danger"></span>
                 <input type="number" class="form-control mb-2" placeholder="Shareholder 4 share"
                        asp-for="Shareholder4Share"/>
-                <span asp-validation-for="Shareholder4Share" class="text-bg-danger"></span>
+                <span asp-validation-for="Shareholder4Share" class="text-danger"></span>
             </div>
         </div>
         <div class="row">
@@ -89,3 +89,24 @@
         </div>
     </form>
 </div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        @if (Model.ShowSweetAlert)
+        {
+            <text>
+            Swal.fire({
+                title: 'Success!',
+                text: 'Business created successfully',
+                icon: 'success',
+                confirmButtonText: 'View Business',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '/Businesses/Details/?id=@Model.BusinessId';
+                }
+            });
+            </text>
+        }
+    </script>
+}
