@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -12,14 +8,18 @@ namespace WebApp.Pages.Businesses
 {
     public class DetailsModel : PageModel
     {
-        private readonly DAL.AppDbContext _context;
+        private readonly AppDbContext _context;
 
-        public DetailsModel(DAL.AppDbContext context)
+        public DetailsModel(AppDbContext context)
         {
             _context = context;
         }
 
         public Business Business { get; set; } = default!;
+
+        public List<Shareholder> PersonShareholders { get; set; } = default!;
+
+        public List<Shareholder> BusinessShareholders { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,14 +30,26 @@ namespace WebApp.Pages.Businesses
 
             var business = await _context.Businesses.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (business is not null)
-            {
-                Business = business;
+            var shareholderList = await _context.ShareholdersInBusinesses
+                .Include(s => s.Shareholder)
+                .ThenInclude(s => s.Person)
+                .Include(s => s.Shareholder)
+                .ThenInclude(s => s.ShareholderBusiness)
+                .Where(s => s.BusinessId == id)
+                .ToListAsync();
 
-                return Page();
+            PersonShareholders = new List<Shareholder>();
+            BusinessShareholders = new List<Shareholder>();
+            
+            foreach (var shareholder in shareholderList)
+            {
+                if (shareholder.Shareholder == null) continue;
+                //proovi kuidagi shareholdereid displayda 
             }
 
-            return NotFound();
+            if (business is null) return NotFound();
+            Business = business;
+            return Page();
         }
     }
 }
