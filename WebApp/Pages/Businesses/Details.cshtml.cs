@@ -20,7 +20,6 @@ namespace WebApp.Pages.Businesses
         }
 
         public Business Business { get; set; } = default!;
-
         
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -33,9 +32,9 @@ namespace WebApp.Pages.Businesses
             var business = await _context.Businesses.FirstOrDefaultAsync(m => m.Id == id);
 
             ShareholderList = await _context.ShareholdersInBusinesses.Include(s => s.Shareholder)
-                .ThenInclude(s => s.Person)
+                .ThenInclude(s => s!.Person)
                 .Include(s => s.Shareholder)
-                .ThenInclude(s => s.ShareholderBusiness)
+                .ThenInclude(s => s!.ShareholderBusiness)
                 .Where(s => s.BusinessId == id)
                 .ToListAsync();
 

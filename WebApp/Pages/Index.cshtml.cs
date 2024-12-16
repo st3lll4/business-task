@@ -27,10 +27,10 @@ public class IndexModel : PageModel
         return await _context.Businesses
             .Include(b => b.ShareholdersInBusiness!)
             .ThenInclude(shareholdersInBusiness => shareholdersInBusiness.Shareholder)
-            .ThenInclude(s => s.Person)
+            .ThenInclude(s => s!.Person)
             .Include(b => b.ShareholdersInBusiness!)
             .ThenInclude(shareholdersInBusiness => shareholdersInBusiness.Shareholder)
-            .ThenInclude(s => s.ShareholderBusiness)
+            .ThenInclude(s => s!.ShareholderBusiness)
             .Where(b =>
                 b.BusinessName.ToLower().Contains(searchTerm) ||
                 b.RegistryCode.ToLower().Contains(searchTerm) ||
@@ -66,7 +66,9 @@ public class IndexModel : PageModel
 
     public async Task<IActionResult> OnPost()
     {
-        if (Search != null) Search = Search.Trim().ToLower();
+        if (Search == null) return Page();
+
+        Search = Search.Trim().ToLower();
 
         Businesses = await GetSearchResults(Search);
 

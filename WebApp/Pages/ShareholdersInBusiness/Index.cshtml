@@ -38,10 +38,10 @@
                 @Html.DisplayFor(modelItem => item.ShareCapital)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Business.BusinessName)
+                @Html.DisplayFor(modelItem => item.Business!.BusinessName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Shareholder.Id)
+                @Html.DisplayFor(modelItem => item.Shareholder!.Id)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

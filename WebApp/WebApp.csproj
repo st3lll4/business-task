@@ -37,4 +37,12 @@
       <_ContentIncludedByDefault Remove="Pages\Shareholders\Index.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Pages\Shareholders\Create.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Shareholders\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Shareholders\Details.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Shareholders\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Shareholders\Index.cshtml" />
+    </ItemGroup>
+
 </Project>

@@ -27,13 +27,13 @@
             @Html.DisplayNameFor(model => model.ShareholderInBusiness.Business)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ShareholderInBusiness.Business.BusinessName)
+            @Html.DisplayFor(model => model.ShareholderInBusiness.Business!.BusinessName)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ShareholderInBusiness.Shareholder)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ShareholderInBusiness.Shareholder.Id)
+            @Html.DisplayFor(model => model.ShareholderInBusiness.Shareholder!.Id)
         </dd>
     </dl>
 </div>
