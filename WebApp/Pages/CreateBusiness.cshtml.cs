@@ -132,9 +132,9 @@ public class CreateBusiness : PageModel
         }
         
 
-        if (Shareholder1Share + Shareholder2Share + Shareholder3Share + Shareholder4Share < TotalCapital)
+        if (Shareholder1Share + Shareholder2Share + Shareholder3Share + Shareholder4Share != TotalCapital)
         {
-            ModelState.AddModelError("ShareholderShares",
+            ModelState.AddModelError("Shareholder4Shares",
                 $"Total shares have to be equal to {TotalCapital}.");
         }
 

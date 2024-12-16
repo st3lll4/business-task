@@ -18,35 +18,35 @@
 <div class="container">
     <form method="post" id="createBusinessForm">
         <div class="row mb-3 justify-content-center">
-            <label for="businessName" class="col-sm-2 col-form-label text-end">Name</label>
+            <label for="businessName" class="col-sm-2 col-form-label text-end fw-bold">Name</label>
             <div class="col-sm-3">
                 <input type="text" class="form-control" id="businessName" asp-for="BusinessName"/>
                 <span asp-validation-for="BusinessName" class="text-danger"></span>
             </div>
         </div>
         <div class="row mb-3 justify-content-center">
-            <label for="registryCode" class="col-sm-2 col-form-label text-end">Registry code</label>
+            <label for="registryCode" class="col-sm-2 col-form-label text-end fw-bold">Registry code</label>
             <div class="col-sm-3">
                 <input type="text" class="form-control" id="registryCode" asp-for="RegistryCode"/>
                 <span asp-validation-for="RegistryCode" class="text-danger"></span>
             </div>
         </div>
         <div class="row mb-3 justify-content-center">
-            <label for="foundingDate" class="col-sm-2 col-form-label text-end">Founding date</label>
+            <label for="foundingDate" class="col-sm-2 col-form-label text-end fw-bold">Founding date</label>
             <div class="col-sm-3">
                 <input type="date" class="form-control" id="foundingDate" asp-for="FoundingDate"/>
                 <span asp-validation-for="FoundingDate" class="text-danger"></span>
             </div>
         </div>
         <div class="row mb-3 justify-content-center">
-            <label for="totalCapital" class="col-sm-2 col-form-label text-end">Total capital</label>
+            <label for="totalCapital" class="col-sm-2 col-form-label text-end fw-bold">Total capital</label>
             <div class="col-sm-3">
                 <input type="number" class="form-control" id="totalCapital" asp-for="TotalCapital"/>
                 <span asp-validation-for="TotalCapital" class="text-danger"></span>
             </div>
         </div>
         <div class="row mb-3 justify-content-center">
-            <label for="shareholder1" class="col-sm-2 col-form-label text-end">Select shareholders</label>
+            <label for="shareholder1" class="col-sm-2 col-form-label text-end fw-bold">Select shareholders</label>
             <div class="col-sm-3 m-2">
                 <select asp-for="Shareholder1" id="shareholder1" class="form-select mb-2"
                         asp-items="Model.ShareholderSelectList"></select>
@@ -64,7 +64,7 @@
             </div>
         </div>
         <div class="row mb-3 justify-content-center">
-            <label for="shareholder1Share" class="col-sm-2 col-form-label text-end">Select a share for
+            <label for="shareholder1Share" class="col-sm-2 col-form-label text-end fw-bold">Select a share for
                 each shareholder</label>
             <div class="col-sm-3 m-2">
                 <input type="number" class="form-control mb-2" id="shareholder1Share" placeholder="Shareholder 1 share"
@@ -84,7 +84,7 @@
         </div>
         <div class="row">
             <div class="col text-center">
-                <button type="submit" class="btn btn-light border-dark-subtle">Create</button>
+                <button type="submit" class="btn btn-dark">Create</button>
             </div>
         </div>
     </form>

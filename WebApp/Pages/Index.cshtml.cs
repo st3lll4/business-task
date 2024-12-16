@@ -3,39 +3,26 @@ using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace WebApp.Pages;
 
 public class IndexModel : PageModel
 {
     private AppDbContext _context;
-    
-    [BindProperty] public string Search { get; set; } = default!;
+
+    [BindProperty(SupportsGet = true)] public string? Search { get; set; }
     public List<Business> Businesses { get; set; } = new();
+    [BindProperty(SupportsGet = true)] public string? Message { get; set; }
 
     public IndexModel(AppDbContext context)
     {
         _context = context;
     }
 
-    public void OnGet()
+    private async Task<List<Business>> GetSearchResults(string searchTerm)
     {
-        
-        // Businesses = await _context.Businesses
-        //     .Include(b => b.ShareholdersInBusiness!)
-        //     .ThenInclude(ShareholdersInBusiness => ShareholdersInBusiness.Shareholder)
-        //     .ThenInclude(s => s!.Person)
-        //     .Include(b => b.ShareholdersInBusiness!)
-        //     .ThenInclude(ShareholdersInBusiness => ShareholdersInBusiness.Shareholder)
-        //     .ThenInclude(s => s!.Business)
-        //     .ToListAsync();
-    }
-
-    public async Task<IActionResult> OnPost()
-    {
-        Search = Search.Trim().ToLower();
-        
-        Businesses = await _context.Businesses
+        return await _context.Businesses
             .Include(b => b.ShareholdersInBusiness!)
             .ThenInclude(shareholdersInBusiness => shareholdersInBusiness.Shareholder)
             .ThenInclude(s => s.Person)
@@ -43,26 +30,48 @@ public class IndexModel : PageModel
             .ThenInclude(shareholdersInBusiness => shareholdersInBusiness.Shareholder)
             .ThenInclude(s => s.ShareholderBusiness)
             .Where(b =>
-                b.BusinessName.ToLower().Contains(Search) ||
-                b.RegistryCode.ToLower().Contains(Search) ||
-                b.ShareholdersInBusiness!.Any(shareholdersInBusiness => 
-                    shareholdersInBusiness.Shareholder!.Person != null && 
+                b.BusinessName.ToLower().Contains(searchTerm) ||
+                b.RegistryCode.ToLower().Contains(searchTerm) ||
+                b.ShareholdersInBusiness!.Any(shareholdersInBusiness =>
+                    shareholdersInBusiness.Shareholder!.Person != null &&
                     (
-                        shareholdersInBusiness.Shareholder.Person.FirstName.ToLower().Contains(Search) ||
-                        shareholdersInBusiness.Shareholder.Person.LastName.ToLower().Contains(Search) ||
-                        shareholdersInBusiness.Shareholder.Person.IdCode.Contains(Search)
+                        shareholdersInBusiness.Shareholder.Person.FirstName.ToLower().Contains(searchTerm) ||
+                        shareholdersInBusiness.Shareholder.Person.LastName.ToLower().Contains(searchTerm) ||
+                        shareholdersInBusiness.Shareholder.Person.IdCode.Contains(searchTerm)
                     )
                 ) ||
-                b.ShareholdersInBusiness!.Any(shareholdersInBusiness => 
-                    shareholdersInBusiness.Shareholder!.ShareholderBusiness != null && 
+                b.ShareholdersInBusiness!.Any(shareholdersInBusiness =>
+                    shareholdersInBusiness.Shareholder!.ShareholderBusiness != null &&
                     (
-                        shareholdersInBusiness.Shareholder.ShareholderBusiness.BusinessName.ToLower().Contains(Search) ||
-                        shareholdersInBusiness.Shareholder.ShareholderBusiness.RegistryCode.Contains(Search)
+                        shareholdersInBusiness.Shareholder.ShareholderBusiness.BusinessName.ToLower()
+                            .Contains(searchTerm) ||
+                        shareholdersInBusiness.Shareholder.ShareholderBusiness.RegistryCode.Contains(searchTerm)
                     )
                 )
             )
             .ToListAsync();
-            
+    }
+
+    public async Task<IActionResult> OnGet()
+    {
+        if (!string.IsNullOrEmpty(Search))
+        {
+            Businesses = await GetSearchResults(Search.Trim().ToLower());
+        }
+
         return Page();
+    }
+
+    public async Task<IActionResult> OnPost()
+    {
+        if (Search != null) Search = Search.Trim().ToLower();
+
+        Businesses = await GetSearchResults(Search);
+
+        if (!Businesses.IsNullOrEmpty()) return Page();
+        Message = "No businesses with such info were found!";
+        return RedirectToPage("/Index",
+            new { message = Message }
+        );
     }
 }

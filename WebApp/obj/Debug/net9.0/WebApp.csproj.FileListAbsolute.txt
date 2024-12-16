@@ -344,7 +344,6 @@
 /Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/nezrqnk58p-muycvpuwrr.gz
 /Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/v0zgfp0y55-87fc7y1x7t.gz
 /Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/yfc7ypekbg-mlv21k5csn.gz
-/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-lugek5hnai.gz
 /Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/15ykilufbm-61n19gt1b8.gz
 /Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/5wk3qh7byk-fr7q2aak1r.gz
 /Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/y1iq0brb9j-bqjiyaj88i.gz
@@ -424,3 +423,4 @@
 /Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/WebApp.genruntimeconfig.cache
 /Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/ref/WebApp.dll
 /Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/WebApp.sourcelink.json
+/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-2dr4jz0u34.gz

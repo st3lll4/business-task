@@ -2,28 +2,61 @@
 @model WebApp.Pages.Businesses.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Business Details";
 }
 
 <div class="container mt-4">
-    <div class="card shadow-sm">
-        <div class="card-header bg-white m-1">
-            <h1 class="mb-0">@Model.Business.BusinessName</h1>
+    <div class="card business-card">
+        <div class="card-header">
+            <h1 class="h2 mb-0">@Model.Business.BusinessName</h1>
         </div>
         <div class="card-body">
-            <div class="row">
+            <dl class="row business-info">
                 <dt class="col-sm-3">Registry code:</dt>
                 <dd class="col-sm-9">@Model.Business.RegistryCode</dd>
 
                 <dt class="col-sm-3">Total capital:</dt>
-                <dd class="col-sm-9">@Model.Business.TotalCapital</dd>
+                <dd class="col-sm-9">@Model.Business.TotalCapital.ToString("C")</dd>
 
                 <dt class="col-sm-3">Founding date:</dt>
-                <dd class="col-sm-9">@Model.Business.FoundingDate</dd>
-                
+                <dd class="col-sm-9">@Model.Business.FoundingDate.Date.ToString("dd.MM.yyyy")</dd>
+
                 <dt class="col-sm-3">Shareholders:</dt>
-                <dd class="col-sm-9"></dd>
-            </div>
+                <dd class="col-sm-9">
+                    <ul class="shareholder-list">
+                        @foreach (var shareholder in Model.ShareholderList)
+                        {
+                            if (shareholder.Shareholder == null) continue;
+                            <li class="shareholder-item">
+                                @if (shareholder.Shareholder.ShareholderBusiness == null)
+                                {
+                                    <div>
+                                        <strong>@shareholder.Shareholder.Person!.FirstName @shareholder.Shareholder.Person!.LastName</strong>
+                                        @if (shareholder.IsFounder)
+                                        {
+                                            <span class="founder-badge">Founder</span>
+                                        }
+                                    </div>
+                                    <div>National identification number: @shareholder.Shareholder.Person!.IdCode</div>
+                                    <div>Share: @shareholder.ShareCapital.ToString("C")</div>
+                                }
+                                else
+                                {
+                                    <div>
+                                        <strong>@shareholder.Shareholder.ShareholderBusiness.BusinessName</strong>
+                                        @if (shareholder.IsFounder)
+                                        {
+                                            <span class="founder-badge">Founder</span>
+                                        }
+                                    </div>
+                                    <div>Registry code: @shareholder.Shareholder.ShareholderBusiness.RegistryCode</div>
+                                    <div>Share: @shareholder.ShareCapital.ToString("C")</div>
+                                }
+                            </li>
+                        }
+                    </ul>
+                </dd>
+            </dl>
         </div>
     </div>
 </div>
