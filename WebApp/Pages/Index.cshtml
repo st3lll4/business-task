@@ -6,18 +6,12 @@
 
 <div class="container mt-4">
     <h1 class="mb-4">Business registry</h1>
-
-    @if (!string.IsNullOrEmpty(Model.Message))
-    {
-        <div class="alert alert-danger" role="alert">
-            @Model.Message
-        </div>
-    }
+    
 
     <div class="search-form">
-        <form method="post" class="row g-3 align-items-center">
+        <form method="get" class="row g-3 align-items-center">
             <div class="col-auto flex-grow-1">
-                <input type="text" class="form-control" name="search" placeholder="Search businesses...">
+                <input type="text" asp-for="Search" class="form-control" placeholder="Search..."/>
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-dark">Search</button>
@@ -25,6 +19,13 @@
         </form>
     </div>
 
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+        <div class="alert alert-danger" role="alert">
+            @Model.Message
+        </div>
+    }
+    
     <ul class="business-list">
         @foreach (var business in Model.Businesses)
         {

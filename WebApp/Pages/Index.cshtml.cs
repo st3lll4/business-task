@@ -14,7 +14,6 @@ public class IndexModel : PageModel
     [BindProperty(SupportsGet = true)] public string? Search { get; set; }
     public List<Business> Businesses { get; set; } = new();
     [BindProperty(SupportsGet = true)] public string? Message { get; set; }
-    [BindProperty(SupportsGet = true)] public int? BusinessId { get; set; }
 
 
     public IndexModel(AppDbContext context)
@@ -56,23 +55,17 @@ public class IndexModel : PageModel
 
     public async Task<IActionResult> OnGet()
     {
-        if (!string.IsNullOrEmpty(Search))
+        if (string.IsNullOrWhiteSpace(Search))
         {
-            Businesses = await GetSearchResults(Search.Trim().ToLower());
+            return Page();
         }
-
-        return Page();
-    }
-
-    public async Task<IActionResult> OnPost()
-    {
-        if (Search == null) return Page();
 
         Search = Search.Trim().ToLower();
 
         Businesses = await GetSearchResults(Search);
 
         if (!Businesses.IsNullOrEmpty()) return Page();
+        
         Message = "No businesses with such info were found!";
         return RedirectToPage("/Index",
             new { message = Message }
