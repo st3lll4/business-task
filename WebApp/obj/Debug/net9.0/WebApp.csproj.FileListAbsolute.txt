@@ -423,4 +423,4 @@
 /Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/WebApp.genruntimeconfig.cache
 /Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/ref/WebApp.dll
 /Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/WebApp.sourcelink.json
-/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-2dr4jz0u34.gz
+/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-w09d15tahg.gz

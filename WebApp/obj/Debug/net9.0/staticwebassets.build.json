@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NE/E15Swm0kOXKELvSRYhQ34GG1h1XGOCgXcUPe/H9o=",
+  "Hash": "Lm69fmV6fJBIbUl4/xl8JSc4DNNqu7E0bsKWXE36Y4M=",
   "Source": "WebApp",
   "BasePath": "_content/WebApp",
   "Mode": "Default",
@@ -2285,12 +2285,12 @@
       "OriginalItemSpec": "/Users/stella.t/RiderProjects/business-task/WebApp/wwwroot/lib/jquery/dist/jquery.min.js"
     },
     {
-      "Identity": "/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-2dr4jz0u34.gz",
+      "Identity": "/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-w09d15tahg.gz",
       "SourceId": "WebApp",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/",
       "BasePath": "_content/WebApp",
-      "RelativePath": "css/site#[.{fingerprint=2dr4jz0u34}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=w09d15tahg}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -2299,8 +2299,8 @@
       "RelatedAsset": "/Users/stella.t/RiderProjects/business-task/WebApp/wwwroot/css/site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "j0eh0x0640",
-      "Integrity": "MwVV1dc6rqFWZirwE3wCUikAr1piys5IGLq7xXJG/30=",
+      "Fingerprint": "vuhe2opmn0",
+      "Integrity": "5wN2qWKPz5leZLqoQoppmGWgoYh0vQU3Sz9YmfxVHSk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/stella.t/RiderProjects/business-task/WebApp/wwwroot/css/site.css"
@@ -4042,8 +4042,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "2dr4jz0u34",
-      "Integrity": "er0SJcjKZxqYLny6vNxz5TJf6oZjYJRjr6Z3q8fvQyM=",
+      "Fingerprint": "w09d15tahg",
+      "Integrity": "8JOMdMVug81snmxyL7uEjc8w2pw2ufgklWKyboxN3O4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
@@ -5353,167 +5353,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.2dr4jz0u34.css",
-      "AssetFile": "/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-2dr4jz0u34.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001490312966"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "670"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"MwVV1dc6rqFWZirwE3wCUikAr1piys5IGLq7xXJG/30=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 16 Dec 2024 14:19:38 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"er0SJcjKZxqYLny6vNxz5TJf6oZjYJRjr6Z3q8fvQyM=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2dr4jz0u34"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-er0SJcjKZxqYLny6vNxz5TJf6oZjYJRjr6Z3q8fvQyM="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.2dr4jz0u34.css",
-      "AssetFile": "/Users/stella.t/RiderProjects/business-task/WebApp/wwwroot/css/site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2102"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"er0SJcjKZxqYLny6vNxz5TJf6oZjYJRjr6Z3q8fvQyM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 16 Dec 2024 14:19:38 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2dr4jz0u34"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-er0SJcjKZxqYLny6vNxz5TJf6oZjYJRjr6Z3q8fvQyM="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.2dr4jz0u34.css.gz",
-      "AssetFile": "/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-2dr4jz0u34.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "670"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"MwVV1dc6rqFWZirwE3wCUikAr1piys5IGLq7xXJG/30=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 16 Dec 2024 14:19:38 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2dr4jz0u34"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-MwVV1dc6rqFWZirwE3wCUikAr1piys5IGLq7xXJG/30="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "/Users/stella.t/.nuget/packages/microsoft.aspnetcore.identity.ui/9.0.0/staticwebassets/css/site.css",
       "Selectors": [],
@@ -5552,12 +5391,12 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-2dr4jz0u34.gz",
+      "AssetFile": "/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-w09d15tahg.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001490312966"
+          "Quality": "0.001492537313"
         }
       ],
       "ResponseHeaders": [
@@ -5567,15 +5406,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "670"
+          "Value": "669"
         },
         {
           "Name": "ETag",
-          "Value": "\"MwVV1dc6rqFWZirwE3wCUikAr1piys5IGLq7xXJG/30=\""
+          "Value": "\"5wN2qWKPz5leZLqoQoppmGWgoYh0vQU3Sz9YmfxVHSk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 16 Dec 2024 14:19:38 GMT"
+          "Value": "Mon, 16 Dec 2024 14:33:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5595,13 +5434,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"er0SJcjKZxqYLny6vNxz5TJf6oZjYJRjr6Z3q8fvQyM=\""
+          "Value": "W/\"8JOMdMVug81snmxyL7uEjc8w2pw2ufgklWKyboxN3O4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-er0SJcjKZxqYLny6vNxz5TJf6oZjYJRjr6Z3q8fvQyM="
+          "Value": "sha256-8JOMdMVug81snmxyL7uEjc8w2pw2ufgklWKyboxN3O4="
         }
       ]
     },
@@ -5624,11 +5463,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"er0SJcjKZxqYLny6vNxz5TJf6oZjYJRjr6Z3q8fvQyM=\""
+          "Value": "\"8JOMdMVug81snmxyL7uEjc8w2pw2ufgklWKyboxN3O4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 16 Dec 2024 14:19:38 GMT"
+          "Value": "Mon, 16 Dec 2024 14:33:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5638,13 +5477,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-er0SJcjKZxqYLny6vNxz5TJf6oZjYJRjr6Z3q8fvQyM="
+          "Value": "sha256-8JOMdMVug81snmxyL7uEjc8w2pw2ufgklWKyboxN3O4="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-2dr4jz0u34.gz",
+      "AssetFile": "/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-w09d15tahg.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5653,7 +5492,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "670"
+          "Value": "669"
         },
         {
           "Name": "Content-Type",
@@ -5661,11 +5500,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"MwVV1dc6rqFWZirwE3wCUikAr1piys5IGLq7xXJG/30=\""
+          "Value": "\"5wN2qWKPz5leZLqoQoppmGWgoYh0vQU3Sz9YmfxVHSk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 16 Dec 2024 14:19:38 GMT"
+          "Value": "Mon, 16 Dec 2024 14:33:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5683,7 +5522,168 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-MwVV1dc6rqFWZirwE3wCUikAr1piys5IGLq7xXJG/30="
+          "Value": "sha256-5wN2qWKPz5leZLqoQoppmGWgoYh0vQU3Sz9YmfxVHSk="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.w09d15tahg.css",
+      "AssetFile": "/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-w09d15tahg.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001492537313"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "669"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5wN2qWKPz5leZLqoQoppmGWgoYh0vQU3Sz9YmfxVHSk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Dec 2024 14:33:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"8JOMdMVug81snmxyL7uEjc8w2pw2ufgklWKyboxN3O4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w09d15tahg"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8JOMdMVug81snmxyL7uEjc8w2pw2ufgklWKyboxN3O4="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.w09d15tahg.css",
+      "AssetFile": "/Users/stella.t/RiderProjects/business-task/WebApp/wwwroot/css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2102"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8JOMdMVug81snmxyL7uEjc8w2pw2ufgklWKyboxN3O4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Dec 2024 14:33:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w09d15tahg"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8JOMdMVug81snmxyL7uEjc8w2pw2ufgklWKyboxN3O4="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.w09d15tahg.css.gz",
+      "AssetFile": "/Users/stella.t/RiderProjects/business-task/WebApp/obj/Debug/net9.0/compressed/fspdjdrw69-w09d15tahg.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "669"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5wN2qWKPz5leZLqoQoppmGWgoYh0vQU3Sz9YmfxVHSk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Dec 2024 14:33:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w09d15tahg"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5wN2qWKPz5leZLqoQoppmGWgoYh0vQU3Sz9YmfxVHSk="
         }
       ]
     },

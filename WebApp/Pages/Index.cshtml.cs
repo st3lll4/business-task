@@ -14,6 +14,8 @@ public class IndexModel : PageModel
     [BindProperty(SupportsGet = true)] public string? Search { get; set; }
     public List<Business> Businesses { get; set; } = new();
     [BindProperty(SupportsGet = true)] public string? Message { get; set; }
+    [BindProperty(SupportsGet = true)] public int? BusinessId { get; set; }
+
 
     public IndexModel(AppDbContext context)
     {

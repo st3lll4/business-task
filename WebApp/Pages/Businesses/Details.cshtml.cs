@@ -10,6 +10,8 @@ namespace WebApp.Pages.Businesses
     {
         private readonly AppDbContext _context;
         
+        [BindProperty(SupportsGet = true)] public int BusinessId { get; set; }
+        
         [BindProperty]public List<ShareholderInBusiness> ShareholderList { get; set; } = default!;
 
         public DetailsModel(AppDbContext context)
@@ -36,15 +38,8 @@ namespace WebApp.Pages.Businesses
                 .ThenInclude(s => s.ShareholderBusiness)
                 .Where(s => s.BusinessId == id)
                 .ToListAsync();
-            
-            // foreach (var shareholder in ShareholderList)
-            // {
-            //     if (shareholder.Shareholder == null) continue;
-            //     Console.WriteLine(
-            //          shareholder.Shareholder.ShareholderBusiness == null 
-            //              ? $"{shareholder.Shareholder.Person!.FirstName} {shareholder.Shareholder.Person!.LastName}" 
-            //              : shareholder.Shareholder.ShareholderBusiness.BusinessName);
-            // }
+
+            BusinessId = id.Value;
 
             if (business is null) return NotFound();
             Business = business;
