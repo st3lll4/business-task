@@ -7,10 +7,10 @@ A web application that lets users:
 - Search for businesses
 - Create new businesses through a form
 
-## Tech Stack
+## Tech 
 Built with C#
 
-## Important Notice
+## Important 
 Please do not clone or copy!
 
 ---
